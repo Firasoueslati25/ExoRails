@@ -8,12 +8,11 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new # needed to instantiate the form_for
+    @task = Task.new
   end
 
   def create
     @task = Task.new(params[:task])
     @task.save
-    # Will raise ActiveModel::ForbiddenAttributesError
   end
 end
